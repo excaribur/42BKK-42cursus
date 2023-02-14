@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*    libft.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 21:56:11 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/14 23:42:25 by jphonyia         ###   ########.fr       */
+/*   Created: 2023/02/14 22:20:30 by jphonyia          #+#    #+#             */
+/*   Updated: 2023/02/14 23:42:32 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(unsigned char letter)
-{
-	if (letter >= 'a' && letter <= 'z')
-	{
-		return (letter);
-	}
-	if (letter >= 'A' && letter <= 'Z')
-	{
-		return (letter);
-	}
-	if (letter >= '0' && letter <= '9')
-	{
-		return (letter);
-	}
-	return (0);
-}
+#ifndef LIBFT_H
+#define LIBFT_H
+
+	int	ft_isalpha(unsigned char character);
+	int	ft_isdigit(unsigned char character);
+	int ft_isalnum(unsigned char letter)
+
+#endif
