@@ -13,4 +13,5 @@
 int atoi(void)
 {
     int a;
+    int b;
 }
