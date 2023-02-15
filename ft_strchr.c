@@ -6,18 +6,18 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:03:04 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/15 11:40:59 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/15 22:08:40 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	if ((!(*s) && c == '\0') || c == '\0')
-		return ("\0");
 	while (*s)
 	{
 		if (*s == c)
 			return ((char *)s);
+		if (*s == '\0')
+			return (0);
 		s++;
 	}
 	return (0);

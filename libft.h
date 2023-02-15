@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    libft.h                                           :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:32:19 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/15 16:49:31 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:35:07 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_tolower(int letter);
 int	ft_toupper(int letter);
 char *ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
+void *ft_memchr(const void *s, int c, size_t n);
 
 #endif
