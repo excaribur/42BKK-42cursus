@@ -1,0 +1,21 @@
+
+
+#include <ctype.h>
+#include <stdio.h>
+int main() {
+	int i;
+
+	i = -1;
+	while (i < 256)
+	{
+		if (ft_toupper(i) != toupper(i))
+		{
+			printf("ctype %d = %d\n", i, toupper(i));
+			printf("ft %d = %d\n", i, ft_toupper(i));
+			printf("%s", "fail");
+			return 1;
+		}
+		i++;
+	}
+	printf("%s", "pass");
+}

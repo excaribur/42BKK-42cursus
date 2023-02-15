@@ -6,19 +6,15 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 19:00:11 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/14 19:52:22 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/15 09:42:00 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(unsigned char character)
+int	ft_isalpha(int letter)
 {
-	if (character >= 'a' && character <= 'z')
-	{
-		return (character);
-	}
-	if (character >= 'A' && character <= 'Z')
-	{
-		return (character);
-	}
+	if (letter >= 'a' && letter <= 'z')
+		return (1);
+	if (letter >= 'A' && letter <= 'Z')
+		return (1);
 	return (0);
 }

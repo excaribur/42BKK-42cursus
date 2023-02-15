@@ -6,15 +6,15 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 19:47:41 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/14 21:55:28 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/15 09:26:03 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(unsigned char character)
+int	ft_isdigit(int letter)
 {
-	if (character >= '0' && character <= '9')
+	if (letter >= 48 && letter <= 57)
 	{
-		return (character);
+		return (1);
 	}
 	return (0);
 }

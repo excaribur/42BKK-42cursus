@@ -6,23 +6,23 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:56:11 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/14 23:42:25 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/15 09:27:26 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(unsigned char letter)
+int	ft_isalnum(int letter)
 {
 	if (letter >= 'a' && letter <= 'z')
 	{
-		return (letter);
+		return (1);
 	}
 	if (letter >= 'A' && letter <= 'Z')
 	{
-		return (letter);
+		return (1);
 	}
 	if (letter >= '0' && letter <= '9')
 	{
-		return (letter);
+		return (1);
 	}
 	return (0);
 }
