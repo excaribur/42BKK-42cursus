@@ -6,36 +6,37 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:17:36 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/15 20:44:19 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/16 10:38:14 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdlib.h>
-// #include "libft.h"
+#include <stdlib.h>
+#include "libft.h"
 
-// size_t	ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 
-// size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
-// {
-// 	int	i;
-// 	int len;
-// 	size_t	lenDst;
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+{
+	register char		*dst_cpy;
+	register const char	*src_cpy;
+	register size_t		n;
+	size_t				dlen;
 
-// 	if (!(*dst))
-// 		return (0);
-
-// 	lenDst = 0;
-// 	i = 0;
-// 	while (*dst++)
-// 		i++;
-// 	lenDst = i - 1;
-// 	len = dstsize - lenDst - 1;
-// 	while (*src && len-- > 0)
-// 	{
-// 		*dst++ = *src++;
-// 	}
-// 	*dst = '\0';
-// 	return (lenDst + ft_strlen(src));
-// }
-
-/////// Do memcpy first /////
+	dst_cpy = dst;
+	src_cpy = src;
+	n = dstsize;
+	while (n-- != 0 && *dst_cpy != '\0')
+		dst_cpy++;
+	dlen = dst_cpy - dst;
+	n = dstsize - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(src_cpy));
+	while (*src_cpy != '\0')
+	{
+		if (n-- != 1)
+			*dst_cpy++ = *src_cpy;
+		src_cpy++;
+	}
+	*dst_cpy = '\0';
+	return (dlen + (src_cpy - src));
+}

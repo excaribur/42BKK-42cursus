@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:32:19 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/15 20:35:07 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/16 08:58:49 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	ft_toupper(int letter);
 char *ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 void *ft_memchr(const void *s, int c, size_t n);
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
 
 #endif
