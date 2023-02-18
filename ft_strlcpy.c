@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 12:10:02 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/18 16:52:34 by jphonyia         ###   ########.fr       */
+/*   Created: 2023/02/18 12:38:44 by jphonyia          #+#    #+#             */
+/*   Updated: 2023/02/18 14:01:06 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+size_t ft_strlcpy(char *restrict dst, const char * restrict src, size_t dstsize)
 {
-	unsigned char	*_dst;
-	unsigned char	*_src;
+	int count;
 
-	_dst = (unsigned char *)dst;
-	_src = (unsigned char *)src;
-	if (_src == _dst || len == 0)
-		return (dst);
-	if (_dst > _src)
+	count = 0;
+	while (*src)
 	{
-		_dst = _dst + (len - 1);
-		_src = _src + (len - 1);
-		while (len-- > 0)
-			*_dst-- = *_src--;
-		return (dst);
+		if (dstsize > 1)
+		{
+			*dst++ = *src; 
+			dstsize--;
+		}
+		src++;
+		count++;
 	}
-	while (len-- > 0)
-		*_dst++ = *_src++;
-	return (dst);
+	while (dstsize > 0 && *dst)
+	{
+		*dst++ = '\0';
+	}
+	return (count);
 }

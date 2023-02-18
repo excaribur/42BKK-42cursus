@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 12:10:02 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/18 16:52:34 by jphonyia         ###   ########.fr       */
+/*   Created: 2023/02/18 14:09:50 by jphonyia          #+#    #+#             */
+/*   Updated: 2023/02/18 15:34:55 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void *ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*_dst;
-	unsigned char	*_src;
+	unsigned char *ptr;
 
-	_dst = (unsigned char *)dst;
-	_src = (unsigned char *)src;
-	if (_src == _dst || len == 0)
-		return (dst);
-	if (_dst > _src)
+	ptr = (unsigned char *)b;
+	while(len-- > 0)
 	{
-		_dst = _dst + (len - 1);
-		_src = _src + (len - 1);
-		while (len-- > 0)
-			*_dst-- = *_src--;
-		return (dst);
+		*(ptr++) = (unsigned char) c;
 	}
-	while (len-- > 0)
-		*_dst++ = *_src++;
-	return (dst);
+	return (b);
 }

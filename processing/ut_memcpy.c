@@ -8,6 +8,13 @@ int main () {
    printf("Before memcpy dest = %s\n", dest);
    memcpy(dest, src, 2);
    printf("After memcpy dest = %s\n", dest);
+
+   char dest2[50];
+   
+   if (!(memcpy(dest2, NULL, 2)))
+      printf("NULL");
+   printf("After memcpy dest = %s\n", dest2);
+   
    
    return(0);
 }
