@@ -6,11 +6,11 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:50:58 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/18 15:07:08 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:01:21 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {

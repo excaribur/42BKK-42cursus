@@ -6,11 +6,10 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:10:12 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/18 15:41:06 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:01:33 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)

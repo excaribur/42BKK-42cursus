@@ -6,16 +6,15 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:17:36 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/16 10:38:14 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/19 17:13:51 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *s);
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	register char		*dst_cpy;
 	register const char	*src_cpy;

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 12:38:44 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/19 17:17:15 by jphonyia         ###   ########.fr       */
+/*   Created: 2023/02/19 17:54:55 by jphonyia          #+#    #+#             */
+/*   Updated: 2023/02/19 18:14:14 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	int count;
+size_t	ft_strlen(const char *s);
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 
-	count = 0;
-	while (*src)
+char	*ft_strdup(const char *s1)
+{
+	size_t	len;
+	char *ptr;
+
+	len = ft_strlen(s1) + 1;
+	ptr = (char *)malloc(sizeof(char) * len);
+	if(ptr)
 	{
-		if (dstsize > 1 && *dst)
-		{
-			*dst++ = *src; 
-			dstsize--;
-		}
-		src++;
-		count++;
+		ptr = (char *)ft_memcpy(ptr, s1, len);
 	}
-	
-	if (dstsize > 0)
-		*dst = '\0';
-	return (count);
+	return (ptr);
 }

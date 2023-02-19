@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 12:38:44 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/19 17:17:15 by jphonyia         ###   ########.fr       */
+/*   Created: 2023/02/19 14:03:18 by jphonyia          #+#    #+#             */
+/*   Updated: 2023/02/19 14:16:21 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int count;
+	const unsigned char *_s1;
+	const unsigned char *_s2;
 
-	count = 0;
-	while (*src)
+	_s1 = s1;
+	_s2 = s2;
+	if (n != 0)
 	{
-		if (dstsize > 1 && *dst)
+		while (n--)
 		{
-			*dst++ = *src; 
-			dstsize--;
+			if (*_s1 != *_s2)
+				return (*_s1 - *_s2);
+			_s1++;
+			_s2++;
 		}
-		src++;
-		count++;
 	}
-	
-	if (dstsize > 0)
-		*dst = '\0';
-	return (count);
+	return (0);
 }

@@ -6,19 +6,23 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:03:04 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/15 22:08:40 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:32:38 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	char *ptr = (char *)s;
+
+	while (*ptr)
 	{
-		if (*s == c)
-			return ((char *)s);
-		if (*s == '\0')
+		if (*ptr == (char) c)
+			return (ptr);
+		if (*ptr == '\0')
 			return (0);
-		s++;
+		ptr++;
 	}
+	if (*ptr == (char) c)
+		return (ptr);
 	return (0);
 }

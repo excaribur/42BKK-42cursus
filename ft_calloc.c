@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 12:38:44 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/19 17:17:15 by jphonyia         ###   ########.fr       */
+/*   Created: 2023/02/19 17:25:05 by jphonyia          #+#    #+#             */
+/*   Updated: 2023/02/19 17:54:34 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int count;
+	unsigned long *ptr;
 
-	count = 0;
-	while (*src)
-	{
-		if (dstsize > 1 && *dst)
-		{
-			*dst++ = *src; 
-			dstsize--;
-		}
-		src++;
-		count++;
-	}
-	
-	if (dstsize > 0)
-		*dst = '\0';
-	return (count);
+	ptr = (unsigned long*)malloc(count * size);
+	if(ptr)
+		ft_bzero(ptr, count * size);
+		
+	return ((void *)ptr);
 }
