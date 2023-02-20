@@ -6,16 +6,16 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:03:18 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/19 14:16:21 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/19 23:56:52 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char *_s1;
-	const unsigned char *_s2;
+	const unsigned char	*_s1;
+	const unsigned char	*_s2;
 
 	_s1 = s1;
 	_s2 = s2;

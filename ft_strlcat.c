@@ -6,13 +6,11 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:17:36 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/19 17:13:51 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/19 23:57:50 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

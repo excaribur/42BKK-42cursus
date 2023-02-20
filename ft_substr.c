@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 12:03:46 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/19 23:59:28 by jphonyia         ###   ########.fr       */
+/*   Created: 2023/02/19 19:57:09 by jphonyia          #+#    #+#             */
+/*   Updated: 2023/02/20 00:09:50 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*start;
+	char	*ptr;
 
-	start = NULL;
-	while (*s)
-	{
-		if ((char) c == *s)
-			start = (char *)s;
+	ptr = (char *)malloc(sizeof(char) * len + 1);
+	if (ptr == NULL || s == NULL)
+		return (NULL);
+	while (start-- && *s)
 		s++;
-	}
-	if (c == *s)
-		start = (char *)s;
-	return (start);
+	ft_memcpy(ptr, s, len);
+	ptr[len] = '\0';
+	return (ptr);
 }

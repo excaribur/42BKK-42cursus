@@ -6,14 +6,15 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:03:04 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/18 17:32:38 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/19 23:57:28 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *ptr = (char *)s;
+	char	*ptr;
 
+	ptr = (char *)s;
 	while (*ptr)
 	{
 		if (*ptr == (char) c)
