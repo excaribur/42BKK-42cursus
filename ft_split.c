@@ -6,57 +6,65 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:21:06 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/21 01:57:34 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:17:49 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*isstr(char const *s, char c)
+size_t	len_arr(char const *s, char c)
 {
-	int	f;
-	
-	f = 0;
+	size_t	subarr;
+	size_t	in_sub;
+
+	subarr = 0;
 	while (*s)
 	{
-		if(*s != c)
-			return ()
-		s++;
+		in_sub = 0;
+		while (*s && *s == c)
+			s++;
+		while (*s && *(s++) != c)
+			in_sub++;
+		if (in_sub)
+			subarr++;
 	}
+	return (subarr);
 }
 
-size_t len_arr(char const *s, char c)
+size_t	len_sub(char const *s, char c)
 {
-	size_t	count;
+	size_t	n;
 
-	count = 0;
-	while(*s)
-	{
-		if (isstr(s, c))
-			count++;
-		s++;
-	}
-	return (count);
+	n = 0;
+	while (*s && *(s++) != c)
+		n++;
+	return (n);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-	char	*ptr;
-	size_t	n;
+	size_t	len;
+	size_t	i;
 
-	ptr = ft_strdup(s);
-	n = len_arr(s, c);
-	arr = (char **)malloc(0);
+	if (s == NULL)
+		return (NULL);
+	arr = (char **)malloc(sizeof(char *) * (len_arr(s, c) + 1));
 	if (arr == NULL)
 		return (NULL);
-	while (n--)
+	i = 0;
+	while (*s)
 	{
-		if (1)
-			break ;
-		ptr = ft_memchr(ptr, c, ft_strlen(ptr));
-		if(ptr)
-			arr[0] = ptr;
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+			len = len_sub(s, c);
+			arr[i] = ft_substr(s, 0, len);
+			s += len;
+			i++;
+		}
 	}
+	arr[i] = NULL;
 	return (arr);
 }
