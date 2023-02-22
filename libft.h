@@ -6,13 +6,12 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:32:19 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/22 17:52:20 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:32:06 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define INT_DIGIT 19
 # include <stdlib.h>
 # include <stdio.h>
 
