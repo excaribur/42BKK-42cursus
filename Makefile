@@ -4,6 +4,7 @@ SRCS = $(wildcard *.c)
 # SRCS =	ft_isalpha.c \
 # 		ft_isdigit.c \
 # 		ft_isalnum.c 
+######################## Do not forget to add explicitly name in SRCS #############
 OBJS = $(SRCS:.c=.o)
 # INC = includes
 NAME = libft.a
