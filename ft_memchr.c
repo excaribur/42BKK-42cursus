@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:48:32 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/18 18:01:27 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:41:47 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0 ;
 	while (i < n)
 	{
-		if (position[i] == c)
+		if (position[i] == (char)c)
 		{
 			return ((void *)&position[i]);
 		}

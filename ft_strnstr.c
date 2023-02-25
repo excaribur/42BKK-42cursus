@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:18:39 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/19 23:59:15 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/25 22:42:19 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,17 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	len_nd;
 
 	len_nd = ft_strlen(needle);
-	if (*needle == 0 || len == 0)
+	if (needle == haystack || *needle == '\0')
 		return ((char *)haystack);
+	if (len <= 0)
+		return (NULL);
 	while (*haystack)
 	{
 		len_stack = ft_strlen(haystack);
-		if (len_stack < 1 || len < len_stack)
-			return (NULL);
 		if (ft_strncmp(needle, haystack, len_nd) == 0)
 			return ((char *)haystack);
+		if (len_stack < 1 || len < len_stack)
+			return (NULL);
 		haystack++;
 	}
 	return (NULL);

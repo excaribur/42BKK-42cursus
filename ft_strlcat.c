@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:17:36 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/25 17:46:25 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/25 22:24:22 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,24 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	char	*d;
 	char	*s;
-	size_t	len;
+	size_t	len_dst;
+	size_t	len_app;
 
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	d = dst;
 	s = (char *)src;
-	len = dstsize;
-	if (dstsize == 0)
-		return (ft_strlen(dst) + ft_strlen(src));
-	while (dstsize-- != 0 && *d != '\0')
-		d++;
-	while (dstsize-- != 0 && *s != '\0')
-		*d++ = *s++;
-	*d = '\0';
-	return (len - ft_strlen(dst) + ft_strlen(src) - 1);
+	len_dst = ft_strlen(dst);
+	len_app = 0;
+	if (dstsize > ft_strlen(dst))
+	{
+		len_app = dstsize - ft_strlen(dst) - 1;
+		d = &dst[ft_strlen(dst)];
+		while (len_app-- >= 1 && *s != '\0')
+			*(d++) = *(s++);
+		*d = '\0';
+	}
+	else
+		return (dstsize + ft_strlen(src));
+	return (len_dst + ft_strlen(src));
 }
-
-
-// #include <string.h>
-// int main()
-// {
-// 	char	*dest;
-
-// 	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
-// 		return (0);
-// 	dest[14] = 'a';
-// 	printf("%zu\n",ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
-// 	printf("%s\n",dest);
-// 	// printf("%zu\n",strlcat(dest, "lorem ipsum dolor sit amet", 15));
-// 	// printf("%s\n",dest);
-// }

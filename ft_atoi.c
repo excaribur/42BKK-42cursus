@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:41:09 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/19 23:53:49 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/25 23:44:12 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,12 @@ int	ft_isdigit(int letter);
 
 char	*remove_whitespace(const char *str)
 {
-	while (*str)
-	{
-		if (*str == '-' || *str == '+' || ft_isdigit(*str))
-		{
-			if (*str == '+')
-				str++;
-			return ((char *)str);
-		}
-		if (!(*str >= 9 && *str <= 15) && *str != 32)
-			return (NULL);
+	while (*str && (*str == 32 || (*str >= 9 && *str <= 15)))
 		str++;
-	}
+	if (*str == '-' || ft_isdigit(*str))
+		return ((char *)str);
+	if (*str == '+' && ft_isdigit(*(str + 1)))
+		return ((char *)++str);
 	return (NULL);
 }
 
