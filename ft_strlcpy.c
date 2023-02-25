@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:38:44 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/20 00:09:40 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/25 16:50:22 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	count;
+	int	len;
 
-	count = 0;
-	while (*src)
+	len = ft_strlen(src);
+	if (dstsize == 0)
+		return (len);
+	while (*src && dstsize != 1)
 	{
-		if (dstsize > 1 && *dst)
-		{
-			*dst++ = *src;
-			dstsize--;
-		}
+		*dst++ = *src;
+		dstsize--;
 		src++;
-		count++;
 	}
-	if (dstsize > 0)
-		*dst = '\0';
-	return (count);
+	*dst = '\0';
+	return (len);
 }

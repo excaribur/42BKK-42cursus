@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:06:02 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/24 23:47:42 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:10:44 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,17 @@ char	*ft_negative(char *ptr, int n)
 	return (ptr);
 }
 
-char	*ft_o(char *ptr)
+char	*ft_o(char *ptr, size_t n)
 {
+	char	*temp;
+
+	temp = ptr;
+	while (n--)
+	{
+		*ptr++ = '0';
+	}
 	*ptr = '\0';
-	*(--ptr) = '0';
-	return (ptr);
+	return (temp);
 }
 
 char	*ft_itoa(int n)
@@ -72,5 +78,5 @@ char	*ft_itoa(int n)
 		return (ft_positive(&ptr[0] + len, n));
 	if (n < 0)
 		return (ft_negative(&ptr[0] + len, n));
-	return (ft_o(ptr + len + 1));
+	return (ft_o(ptr, len));
 }

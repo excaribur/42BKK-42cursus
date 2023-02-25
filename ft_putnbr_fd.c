@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 02:02:56 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/25 02:47:36 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:55:00 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ void	ft_putnbr_fd(int n, int fd)
 	char	c;
 
 	if (n == 0)
-		write(fd, "0", 1);
-	i = count(n) - 1;
+		ft_putchar_fd('0', fd);
+	i = count(n);
 	if (n < 0)
 	{
 		n = n + 1;
-		write(fd, "-", 1);
-		n = -n;
-	}	
+		ft_putchar_fd('-', fd);
+		n = -1 * n;
+	}
 	while (n != 0)
 	{
 		c = '0' + n % (10 * i--);
-		write(fd, &c, 1);
+		ft_putchar_fd(c, fd);
 		n = n / 10;
 		if (n < 10)
 			n = n + 1;
