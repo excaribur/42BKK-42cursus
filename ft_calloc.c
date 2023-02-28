@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:25:05 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/28 16:07:36 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/03/01 02:35:42 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, count);
+	ft_bzero(ptr, count * size);
 	return (ptr);
 }
