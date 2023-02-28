@@ -19,6 +19,8 @@
         "__bit_reference": "c",
         "algorithm": "c",
         "chrono": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "cstdint": "c",
+        "cstdlib": "c"
     }
 }
