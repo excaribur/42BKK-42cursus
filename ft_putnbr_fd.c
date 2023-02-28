@@ -6,45 +6,31 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 02:02:56 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/25 20:49:02 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/28 20:16:02 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	count(int n)
+void	putnbr(long n, int fd)
 {
-	unsigned int	count;
+	char	c;
 
-	count = 0;
-	while (n != 0)
-	{
-		n = n / 10;
-		count++;
-	}
-	return (count);
+	if (n > 9)
+		putnbr(n / 10, fd);
+	c = '0' + (n % 10);
+	ft_putchar_fd(c, fd);
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	c;
+	long	num;
 
-	if (n == 0)
-		ft_putchar_fd('0', fd);
-	i = count(n);
-	if (n < 0)
+	num = (long) n;
+	if (num < 0)
 	{
-		n = n + 1;
 		ft_putchar_fd('-', fd);
-		n = -1 * n;
+		num = -1 * num;
 	}
-	while (n != 0)
-	{
-		c = '0' + n % (10 * i--);
-		ft_putchar_fd(c, fd);
-		n = n / 10;
-		if (n < 10)
-			n = n + 1;
-	}
+	putnbr(num, fd);
 }
