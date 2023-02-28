@@ -6,7 +6,7 @@
 /*   By: jphonyia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:57:09 by jphonyia          #+#    #+#             */
-/*   Updated: 2023/02/28 17:21:59 by jphonyia         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:22:50 by jphonyia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ptr[0] = '\0';
 	return (ptr);
 }
-
-// #include <string.h>
-// #include <stdio.h>
-// #include <stdlib.h>
-// int main()
-// {
-// 	char * s = ft_substr("tripouille", 0, 42000);
-// 	s = ft_substr("tripouille", 100, 1);
-// 	// /* 5 */ check(!strcmp(s, ""));
-
-// 	printf(":ft_:%s\n", s);
-
-// }
