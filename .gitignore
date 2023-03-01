@@ -2,5 +2,5 @@
 .DS_Store
 /*
 libft.a
-s.dSYM
-.vscode
+s.dSYM/
+.vscode/
